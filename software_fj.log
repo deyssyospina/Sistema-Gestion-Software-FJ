@@ -1,0 +1,78 @@
+2026-11-09 10:32:47,415 - INFO - Operacion 1: Registro de cliente
+2026-11-09 10:32:47,417 - INFO - Operacion 2: Registro de segundo cliente
+2026-11-09 10:32:47,418 - ERROR - Operacion 3: El correo electrónico no es válido.
+2026-11-09 10:32:47,419 - INFO - Operacion 4: Creacion de servicio de reserva de sala
+2026-11-09 10:32:47,420 - INFO - Operacion 5: Creacion de servicio de alquiler de equipos
+2026-11-09 10:32:47,421 - INFO - Operacion 6: Creacion de asesoria especializada
+2026-11-09 10:32:47,423 - ERROR - Operacion 7: El precio debe ser mayor que cero.
+2026-11-09 10:32:47,426 - INFO - Reserva 1 creada.
+2026-11-09 10:32:47,429 - INFO - Operacion 8: Creacion de reserva de sala
+2026-11-09 10:32:47,433 - INFO - Reserva 1 procesada.
+2026-11-09 10:32:47,434 - INFO - Finalizó el intento de procesamiento de la reserva 1.
+2026-11-09 10:32:47,434 - INFO - Operacion 9: Calculo de costo con descuento e impuesto
+2026-11-09 10:32:47,436 - INFO - Reserva 1 procesada.
+2026-11-09 10:32:47,437 - INFO - Finalizó el intento de procesamiento de la reserva 1.
+2026-11-09 10:32:47,437 - INFO - Reserva 1 confirmada.
+2026-11-09 10:32:47,437 - INFO - Operacion 10: Confirmacion de reserva
+2026-11-09 10:32:47,439 - INFO - Reserva 2 creada.
+2026-11-09 10:32:47,442 - INFO - Operacion 11: Creacion de reserva de equipos
+2026-11-09 10:32:47,445 - ERROR - Error al procesar la reserva.
+Traceback (most recent call last):
+  File "C:\Users\BAYRON\Downloads\Programacion\Sistema-Gestion-Software-FJ-1\reserva.py", line 54, in procesar
+    costo = self.__servicio.calcular_costo(
+        self.__duracion, descuento, impuesto
+    )
+  File "C:\Users\BAYRON\Downloads\Programacion\Sistema-Gestion-Software-FJ-1\servicios_especializados.py", line 52, in calcular_costo
+    validar_costos(descuento, impuesto)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BAYRON\Downloads\Programacion\Sistema-Gestion-Software-FJ-1\servicios_especializados.py", line 14, in validar_costos
+    raise DatosInvalidos("El descuento debe estar entre 0 y 100.")
+excepciones.DatosInvalidos: El descuento debe estar entre 0 y 100.
+2026-11-09 10:32:47,480 - INFO - Finalizó el intento de procesamiento de la reserva 2.
+2026-11-09 10:32:47,481 - ERROR - Operacion 12: No fue posible procesar la reserva.
+2026-11-09 10:32:47,481 - INFO - Reserva 2 procesada.
+2026-11-09 10:32:47,482 - INFO - Finalizó el intento de procesamiento de la reserva 2.
+2026-11-09 10:32:47,482 - INFO - Reserva 2 confirmada.
+2026-11-09 10:32:47,482 - INFO - Operacion 13: Confirmacion de segunda reserva
+2026-11-09 10:32:47,492 - INFO - Reserva 1 cancelada.
+2026-11-09 10:32:47,493 - INFO - Operacion 14: Cancelacion de reserva
+2026-11-09 10:32:47,499 - INFO - Finalizacion de las operaciones del sistema.
+2026-11-09 14:57:32,700 - INFO - Operacion 1: Registro de cliente
+2026-11-09 14:57:32,701 - INFO - Operacion 2: Registro de segundo cliente
+2026-11-09 14:57:32,702 - ERROR - Operacion 3: El correo electrónico no es válido.
+2026-11-09 14:57:32,703 - INFO - Operacion 4: Creacion de servicio de reserva de sala
+2026-11-09 14:57:32,703 - INFO - Operacion 5: Creacion de servicio de alquiler de equipos
+2026-11-09 14:57:32,704 - INFO - Operacion 6: Creacion de asesoria especializada
+2026-11-09 14:57:32,704 - ERROR - Operacion 7: El precio debe ser mayor que cero.
+2026-11-09 14:57:32,705 - INFO - Reserva 1 creada.
+2026-11-09 14:57:32,706 - INFO - Operacion 8: Creacion de reserva de sala
+2026-11-09 14:57:32,707 - INFO - Reserva 1 procesada.
+2026-11-09 14:57:32,707 - INFO - Finalizó el intento de procesamiento de la reserva 1.
+2026-11-09 14:57:32,707 - INFO - Operacion 9: Calculo de costo con descuento e impuesto
+2026-11-09 14:57:32,709 - INFO - Reserva 1 procesada.
+2026-11-09 14:57:32,709 - INFO - Finalizó el intento de procesamiento de la reserva 1.
+2026-11-09 14:57:32,709 - INFO - Reserva 1 confirmada.
+2026-11-09 14:57:32,710 - INFO - Operacion 10: Confirmacion de reserva
+2026-11-09 14:57:32,710 - INFO - Reserva 2 creada.
+2026-11-09 14:57:32,711 - INFO - Operacion 11: Creacion de reserva de equipos
+2026-11-09 14:57:32,712 - ERROR - Error al procesar la reserva.
+Traceback (most recent call last):
+  File "c:\Users\BAYRON\Downloads\Programacion\Sistema-Gestion-Software-FJ-1\reserva.py", line 54, in procesar
+    costo = self.__servicio.calcular_costo(
+        self.__duracion, descuento, impuesto
+    )
+  File "c:\Users\BAYRON\Downloads\Programacion\Sistema-Gestion-Software-FJ-1\servicios_especializados.py", line 52, in calcular_costo
+    validar_costos(descuento, impuesto)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\BAYRON\Downloads\Programacion\Sistema-Gestion-Software-FJ-1\servicios_especializados.py", line 14, in validar_costos
+    raise DatosInvalidos("El descuento debe estar entre 0 y 100.")
+excepciones.DatosInvalidos: El descuento debe estar entre 0 y 100.
+2026-11-09 14:57:32,749 - INFO - Finalizó el intento de procesamiento de la reserva 2.
+2026-11-09 14:57:32,749 - ERROR - Operacion 12: No fue posible procesar la reserva.
+2026-11-09 14:57:32,750 - INFO - Reserva 2 procesada.
+2026-11-09 14:57:32,750 - INFO - Finalizó el intento de procesamiento de la reserva 2.
+2026-11-09 14:57:32,750 - INFO - Reserva 2 confirmada.
+2026-11-09 14:57:32,750 - INFO - Operacion 13: Confirmacion de segunda reserva
+2026-11-09 14:57:32,751 - INFO - Reserva 1 cancelada.
+2026-11-09 14:57:32,752 - INFO - Operacion 14: Cancelacion de reserva
+2026-11-09 14:57:32,758 - INFO - Finalizacion de las operaciones del sistema.
