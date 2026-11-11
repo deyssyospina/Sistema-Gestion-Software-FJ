@@ -153,7 +153,7 @@ ejecutar_operacion(
     "Intento de reserva con servicio no disponible",
     lambda: Reserva(cliente1, sala_mantenimiento, 2)
 )
-    reserva1 = None
+reserva1 = None
  
     if cliente1 and sala:
         reserva1 = ejecutar_operacion(
