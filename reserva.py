@@ -75,7 +75,7 @@ class Reserva:
     def confirmar(self):
 
         if self.__costo_total is None:
-            self.:costo_total=self._servicio.precio*self._horas
+            self._costo_total=self._servicio.precio*self._horas
             self._estado= "CONFIRMADA"
             retrun f"Reserva confirmada. Total: ${self._costo_total:,.2f}"
 
