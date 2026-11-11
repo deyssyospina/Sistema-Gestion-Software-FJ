@@ -161,54 +161,54 @@ reserva1 = ejecutar_operacion(
             "Creacion de reserva de sala",
             lambda: Reserva(clientes, sala, 2)
         )
-    else:
+else:
         # MODIFICACION 3 (aplicado): se avisa en lugar de omitir en silencio
         omitir_operacion(8, "Creacion de reserva de sala",
                          "falta el cliente 1 o la sala")
  
     # OPERACION 9: Calculo de costo con descuento e impuesto
-    if reserva1:
+if reserva1:
         ejecutar_operacion(
             9,
             "Calculo de costo con descuento e impuesto",
             lambda: reserva1.procesar(10, 19)
         )
-    else:
+else:
         omitir_operacion(9, "Calculo de costo con descuento e impuesto",
                          "la reserva 1 no existe")
  
     # OPERACION 10: Confirmacion de reserva
-    if reserva1:
+if reserva1:
         ejecutar_operacion(
             10,
             "Confirmacion de reserva",
             lambda: reserva1.confirmar()
         )
-    else:
+else:
         omitir_operacion(10, "Confirmacion de reserva",
                          "la reserva 1 no existe")
  
     # OPERACION 11: Creacion de reserva de equipos
-    reserva2 = None
+reserva2 = None
  
-    if clientes and equipo:
+if clientes and equipo:
         reserva2 = ejecutar_operacion(
             11,
             "Creacion de reserva de equipos",
             lambda: Reserva(clientes, equipo, 3)
         )
-    else:
+else:
         omitir_operacion(11, "Creacion de reserva de equipos",
                          "falta el cliente 2 o el equipo")
  
     # OPERACION 12: Intento de procesamiento con descuento invalido (debe fallar)
-    if reserva2:
+if reserva2:
         ejecutar_operacion(
             12,
             "Procesamiento con descuento invalido",
             lambda: reserva2.procesar(150, 19)
         )
-    else:
+else:
         omitir_operacion(12, "Procesamiento con descuento invalido",
                          "la reserva 2 no existe")
  
@@ -217,24 +217,24 @@ reserva1 = ejecutar_operacion(
     # proposito). Se deja la operacion tal cual, pero si confirmar() exige
     # que la reserva este procesada, el error quedara registrado en el log
     # como error controlado y no detendra el programa.
-    if reserva2:
+if reserva2:
         ejecutar_operacion(
             13,
             "Confirmacion de segunda reserva",
             lambda: reserva2.confirmar()
         )
-    else:
+else:
         omitir_operacion(13, "Confirmacion de segunda reserva",
                          "la reserva 2 no existe")
  
     # OPERACION 14: Cancelacion de una reserva
-    if reserva1:
+if reserva1:
         ejecutar_operacion(
             14,
             "Cancelacion de reserva",
             lambda: reserva1.cancelar()
         )
-    else:
+else:
         omitir_operacion(14, "Cancelacion de reserva",
                          "la reserva 1 no existe")
 
@@ -259,7 +259,7 @@ if reserva1:
         # Si mostrar_reserva() imprime por dentro y no devuelve nada, eso
         # mostraba "None" en pantalla. Ahora solo se imprime si devuelve texto.
         detalle = reserva.mostrar_reserva()
-        if detalle is not None:
+    if detalle is not None:
             print("\n" + str(detalle))
  
     print("\nEl sistema finalizo sus operaciones.")
