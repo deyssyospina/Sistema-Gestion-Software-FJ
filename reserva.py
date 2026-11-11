@@ -74,9 +74,10 @@ class Reserva:
 
     def confirmar(self):
 
-        if self.__estado != "Pendiente":
-            registrar_error("Intento de confirmar una reserva no pendiente.")
-            raise ErrorReserva("La reserva no está pendiente.")
+        if self.__costo_total is None:
+            self.:costo_total=self._servicio.precio*self._horas
+            self._estado= "CONFIRMADA"
+            retrun f"Reserva confirmada. Total: ${self._costo_total:,.2f}"
 
         try:
             self.procesar()
