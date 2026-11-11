@@ -144,12 +144,20 @@ def iniciar_sistema():
         lambda: ReservaSala("Sala invalida", 0)
     )
  
-    # OPERACION 8: Creacion de una reserva valida
+   
+    # OPERACION 8: Intento de reserva de un servicio no disponible
+sala_mantenimiento = ReservaSala("Sala en Mantenimiento", 50000)
+sala_mantenimiento.disponible = False
+ejecutar_operacion(
+    8,
+    "Intento de reserva con servicio no disponible",
+    lambda: Reserva(cliente1, sala_mantenimiento, 2)
+)
     reserva1 = None
  
     if cliente1 and sala:
         reserva1 = ejecutar_operacion(
-            8,
+            9,
             "Creacion de reserva de sala",
             lambda: Reserva(cliente1, sala, 2)
         )
@@ -229,7 +237,14 @@ def iniciar_sistema():
     else:
         omitir_operacion(14, "Cancelacion de reserva",
                          "la reserva 1 no existe")
- 
+
+    # OPERACION 15: Intento de confirmar una reserva que ya no está pendiente
+if reserva1:
+    ejecutar_operacion(
+        15,
+        "Intento de confirmar reserva no pendiente",
+        lambda: reserva1.confirmar()
+    )
     # RESUMEN FINAL
     print("\n" + "=" * 45)
     print(" RESUMEN DEL SISTEMA")
