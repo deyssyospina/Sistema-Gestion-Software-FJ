@@ -155,11 +155,11 @@ ejecutar_operacion(
 )
 reserva1 = None
  
-if cliente1 and sala:
+if clientes and sala:
 reserva1 = ejecutar_operacion(
             9,
             "Creacion de reserva de sala",
-            lambda: Reserva(cliente1, sala, 2)
+            lambda: Reserva(clientes, sala, 2)
         )
     else:
         # MODIFICACION 3 (aplicado): se avisa en lugar de omitir en silencio
@@ -191,11 +191,11 @@ reserva1 = ejecutar_operacion(
     # OPERACION 11: Creacion de reserva de equipos
     reserva2 = None
  
-    if cliente2 and equipo:
+    if clientes and equipo:
         reserva2 = ejecutar_operacion(
             11,
             "Creacion de reserva de equipos",
-            lambda: Reserva(cliente2, equipo, 3)
+            lambda: Reserva(clientes, equipo, 3)
         )
     else:
         omitir_operacion(11, "Creacion de reserva de equipos",
