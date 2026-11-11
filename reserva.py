@@ -77,7 +77,7 @@ class Reserva:
         if self.__costo_total is None:
             self._costo_total=self._servicio.precio*self._horas
             self._estado= "CONFIRMADA"
-            retrun f"Reserva confirmada. Total: ${self._costo_total:,.2f}"
+            return f"Reserva confirmada. Total: ${self._costo_total:,.2f}"
 
         try:
             self.procesar()
