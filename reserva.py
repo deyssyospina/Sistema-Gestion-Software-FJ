@@ -28,6 +28,7 @@ class Reserva:
         self.__duracion = duracion
         self.__estado = "Pendiente"
         self.__costo = 0
+        self.__procesada = False
 
         self.__id = len(Reserva.reservas) + 1
         Reserva.reservas.append(self)
@@ -48,7 +49,13 @@ class Reserva:
 
     def procesar(self, descuento=0, impuesto=0):
 
+        if self.__estado != "Pendiente":
+            raise ErrorReserva(
+                "Solo se pueden procesar reservas pendientes."
+            )
+
         try:
+            self.__servicio.validar_disponibilidad()
             self.__servicio.validar_parametros(self.__duracion)
 
             costo = self.__servicio.calcular_costo(
@@ -64,6 +71,8 @@ class Reserva:
 
         else:
             self.__costo = costo
+            self.__procesada = True
+
             registrar_evento(f"Reserva {self.__id} procesada.")
             return costo
 
@@ -74,22 +83,24 @@ class Reserva:
 
     def confirmar(self):
 
-        if self.__costo_total is None:
-            self._costo_total=self._servicio.precio*self._horas
-            self._estado= "CONFIRMADA"
-            return f"Reserva confirmada. Total: ${self._costo_total:,.2f}"
+        if self.__estado != "Pendiente":
+            raise ErrorReserva(
+                "No se puede confirmar una reserva que no está pendiente."
+            )
 
-        try:
-            self.procesar()
-            self.__estado = "Confirmada"
+        if not self.__procesada:
+            raise ErrorReserva(
+                "No se puede confirmar una reserva que no ha sido procesada correctamente."
+            )
 
-        except ErrorReserva:
-            registrar_error("No se pudo confirmar la reserva.")
-            raise
+        self.__estado = "Confirmada"
 
-        else:
-            registrar_evento(f"Reserva {self.__id} confirmada.")
-            return "Reserva confirmada correctamente."
+        registrar_evento(f"Reserva {self.__id} confirmada.")
+
+        return (
+            f"Reserva confirmada correctamente. "
+            f"Total: ${self.__costo:,.2f}"
+        )
 
     def cancelar(self):
 
