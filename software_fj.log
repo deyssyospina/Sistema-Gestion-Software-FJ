@@ -76,3 +76,18 @@ excepciones.DatosInvalidos: El descuento debe estar entre 0 y 100.
 2026-11-09 14:57:32,751 - INFO - Reserva 1 cancelada.
 2026-11-09 14:57:32,752 - INFO - Operacion 14: Cancelacion de reserva
 2026-11-09 14:57:32,758 - INFO - Finalizacion de las operaciones del sistema.
+2026-11-11 16:48:44,854 - ERROR - Operacion 8 (inesperado, NameError): name 'cliente1' is not defined
+2026-11-11 16:48:44,858 - ERROR - Operacion 8 omitida: falta el cliente 1 o la sala
+2026-11-11 16:48:44,863 - ERROR - Operacion 9 omitida: la reserva 1 no existe
+2026-11-11 16:48:44,864 - ERROR - Operacion 10 omitida: la reserva 1 no existe
+2026-11-11 16:48:44,866 - ERROR - Operacion 11 omitida: falta el cliente 2 o el equipo
+2026-11-11 16:48:44,891 - ERROR - Operacion 12 omitida: la reserva 2 no existe
+2026-11-11 16:48:44,905 - ERROR - Operacion 13 omitida: la reserva 2 no existe
+2026-11-11 16:48:44,907 - ERROR - Operacion 14 omitida: la reserva 1 no existe
+2026-11-11 16:48:44,920 - INFO - Operacion 1: Registro de cliente
+2026-11-11 16:48:44,921 - INFO - Operacion 2: Registro de segundo cliente
+2026-11-11 16:48:44,970 - ERROR - Operacion 3 (ErrorSistema): El correo electrónico no es válido.
+2026-11-11 16:48:44,976 - INFO - Operacion 4: Creacion de servicio de reserva de sala
+2026-11-11 16:48:44,988 - INFO - Operacion 5: Creacion de servicio de alquiler de equipos
+2026-11-11 16:48:45,016 - INFO - Operacion 6: Creacion de asesoria especializada
+2026-11-11 16:48:45,190 - ERROR - Operacion 7 (ErrorSistema): El precio debe ser mayor que cero.
