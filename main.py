@@ -156,7 +156,7 @@ ejecutar_operacion(
 reserva1 = None
  
 if clientes and sala:
-reserva1 = ejecutar_operacion(
+    reserva1 = ejecutar_operacion(
             9,
             "Creacion de reserva de sala",
             lambda: Reserva(clientes, sala, 2)
