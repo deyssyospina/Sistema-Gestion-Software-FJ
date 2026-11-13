@@ -2,6 +2,7 @@
 # Geraldine Muñoz Jaramillo
 # Deyssy Mariana Ospina
 # Freddy Samir Bustos
+# Resvisión y documentación de manejo de exepciones del sistema
 # Codigo: 213023_102
 # Ingenieria en Sistemas
 # Autoria propia
