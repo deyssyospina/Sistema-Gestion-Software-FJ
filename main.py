@@ -1,3 +1,4 @@
+
 # Geraldine Muñoz Jaramillo
 # Deyssy Mariana Ospina
 # Freddy Samir Bustos
@@ -49,7 +50,9 @@ def ejecutar_operacion(numero, descripcion, accion):
 
         return resultado
 
-    # Captura los errores propios del sistema.
+    # MODIFICACION 1:
+    # Se separan los errores controlados del sistema de los errores
+    # inesperados, para facilitar su identificacion y manejo.
     except ErrorSistema as error:
 
         print("Error controlado:", error)
@@ -60,7 +63,9 @@ def ejecutar_operacion(numero, descripcion, accion):
 
         return None
 
-    # Captura los errores inesperados.
+    # MODIFICACION 2:
+    # Se identifica el tipo de excepcion y se registra en el log
+    # para facilitar la revision de los errores inesperados.
     except Exception as error:
 
         print(f"Error inesperado ({type(error).__name__}):", error)
@@ -71,6 +76,10 @@ def ejecutar_operacion(numero, descripcion, accion):
 
         return None
 
+
+# MODIFICACION 3:
+# Se crea una funcion para informar cuando una operacion no puede
+# ejecutarse por falta de datos o por el fallo de una operacion anterior.
 
 # Funcion para informar cuando una operacion no se puede realizar.
 def omitir_operacion(numero, descripcion, motivo):
@@ -203,6 +212,9 @@ def iniciar_sistema():
 
     else:
 
+        # MODIFICACION 3:
+        # Se informa cuando no se puede crear la reserva por falta
+        # del cliente o del servicio necesario.
         omitir_operacion(
             8,
             "Creacion de reserva de sala",
@@ -278,6 +290,13 @@ def iniciar_sistema():
             "Procesamiento con descuento invalido",
             "La reserva 2 no existe."
         )
+
+    # MODIFICACION:
+    # Se incorpora el seguimiento de la segunda reserva para controlar
+    # su confirmacion y evitar que un error detenga el programa.
+    #
+    # MEJORA POSTERIOR:
+    # Se procesa la reserva con valores validos antes de confirmarla.
 
     # OPERACION 13: Procesamiento y confirmacion de segunda reserva.
     if reserva2:
@@ -407,6 +426,9 @@ def iniciar_sistema():
     # Muestra la informacion de las reservas.
     for reserva in Reserva.reservas:
 
+        # MODIFICACION 5:
+        # Se comprueba que mostrar_reserva() devuelva informacion
+        # antes de imprimirla, evitando mostrar el valor None.
         detalle = reserva.mostrar_reserva()
 
         if detalle is not None:
