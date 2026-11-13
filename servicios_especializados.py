@@ -1,80 +1,54 @@
-
+# Importacion de la clase principal y las excepciones.
 from servicio import Servicio
-from excepciones import ErrorServicio, DatosInvalidos
+from excepciones import ErrorServicio
 
 
-def validar_costos(descuento, impuesto):
-    if not isinstance(descuento, (int, float)) or isinstance(descuento, bool):
-        raise DatosInvalidos("El descuento debe ser numérico.")
-
-    if not isinstance(impuesto, (int, float)) or isinstance(impuesto, bool):
-        raise DatosInvalidos("El impuesto debe ser numérico.")
-
-    if not 0 <= descuento <= 100:
-        raise DatosInvalidos("El descuento debe estar entre 0 y 100.")
-
-    if not 0 <= impuesto <= 100:
-        raise DatosInvalidos("El impuesto debe estar entre 0 y 100.")
-
-
+# Clase para administrar las reservas de salas.
 class ReservaSala(Servicio):
 
+    # Valida la duracion de la reserva.
     def validar_parametros(self, duracion):
+
         if not isinstance(duracion, (int, float)) or isinstance(duracion, bool):
             raise ErrorServicio("La duración debe ser numérica.")
 
         if duracion <= 0:
             raise ErrorServicio("La duración debe ser mayor que cero.")
 
-    def calcular_costo(self, duracion, descuento=0, impuesto=0):
-        self.validar_parametros(duracion)
-        validar_costos(descuento, impuesto)
-
-        subtotal = self._precio_base * duracion
-        subtotal -= subtotal * descuento / 100
-        return round(subtotal * (1 + impuesto / 100), 2)
-
+    # Devuelve la descripcion del servicio.
     def describir_servicio(self):
         return "Reserva de salas por horas."
 
 
+# Clase para administrar el alquiler de equipos.
 class AlquilerEquipo(Servicio):
 
+    # Valida los dias de alquiler.
     def validar_parametros(self, duracion):
+
         if not isinstance(duracion, (int, float)) or isinstance(duracion, bool):
             raise ErrorServicio("La duración debe ser numérica.")
 
         if duracion <= 0:
             raise ErrorServicio("Los días de alquiler deben ser mayores que cero.")
 
-    def calcular_costo(self, duracion, descuento=0, impuesto=0):
-        self.validar_parametros(duracion)
-        validar_costos(descuento, impuesto)
-
-        subtotal = self._precio_base * duracion
-        subtotal -= subtotal * descuento / 100
-        return round(subtotal * (1 + impuesto / 100), 2)
-
+    # Devuelve la descripcion del servicio.
     def describir_servicio(self):
         return "Alquiler de equipos por días."
 
 
+# Clase para administrar las asesorias especializadas.
 class AsesoriaEspecializada(Servicio):
 
+    # Valida las horas de asesoria.
     def validar_parametros(self, duracion):
+
         if not isinstance(duracion, (int, float)) or isinstance(duracion, bool):
             raise ErrorServicio("La duración debe ser numérica.")
 
         if duracion <= 0:
             raise ErrorServicio("Las horas de asesoría deben ser mayores que cero.")
 
-    def calcular_costo(self, duracion, descuento=0, impuesto=0):
-        self.validar_parametros(duracion)
-        validar_costos(descuento, impuesto)
-
-        subtotal = self._precio_base * duracion
-        subtotal -= subtotal * descuento / 100
-        return round(subtotal * (1 + impuesto / 100), 2)
-
+    # Devuelve la descripcion del servicio.
     def describir_servicio(self):
         return "Asesoría especializada por horas."
