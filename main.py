@@ -51,7 +51,7 @@ def ejecutar_operacion(numero, descripcion, accion):
 
         return resultado
 
-    # MODIFICACION 1:
+    # MODIFICACION 1 (Freddy Bustos):
     # Se separan los errores controlados del sistema de los errores
     # inesperados, para facilitar su identificacion y manejo.
     except ErrorSistema as error:
@@ -64,7 +64,7 @@ def ejecutar_operacion(numero, descripcion, accion):
 
         return None
 
-    # MODIFICACION 2:
+    # MODIFICACION 2 (Freddy Bustos):
     # Se identifica el tipo de excepcion y se registra en el log
     # para facilitar la revision de los errores inesperados.
     except Exception as error:
